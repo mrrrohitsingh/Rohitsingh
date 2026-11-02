@@ -114,9 +114,26 @@ section.s{padding:52px 0}
 h2{font-size:clamp(28px,5vw,40px)}
 .card{background:linear-gradient(180deg,var(--surface),var(--surface))}
 .card .tag{background:rgba(212,174,85,.14);border-color:rgba(212,174,85,.5);color:var(--ink)}
-#bl{display:flex;gap:6px;padding:8px 12px 2px;flex-wrap:wrap}#bl button{border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:4px 11px;font:500 12.5px "Public Sans",sans-serif;cursor:pointer}#bl button.on{background:#d4ae55;border-color:#d4ae55;color:#0b1f3a;font-weight:600}.m{line-height:1.5}</style>
+#bl{display:flex;gap:6px;padding:8px 12px 2px;flex-wrap:wrap}#bl button{border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:4px 11px;font:500 12.5px "Public Sans",sans-serif;cursor:pointer}#bl button.on{background:#d4ae55;border-color:#d4ae55;color:#0b1f3a;font-weight:600}.m{line-height:1.5}.cap{display:grid;gap:6px}.caprow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}#cv{background:#f3f4f7;border:1.5px solid var(--line);border-radius:8px}.chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14.5px;color:var(--muted)}.chk input{width:auto;margin-top:4px}#cr{margin:0;padding:9px 14px;font-size:14px}#cf .btn{justify-self:start}
+#intro{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(circle at 50% 40%,#12325c,#0b1f3a 70%);opacity:0;pointer-events:none;transition:opacity .22s ease}
+#intro.show{opacity:1;pointer-events:all}
+#intro.boot{animation:bo .3s 3s forwards}@keyframes bo{to{opacity:0;visibility:hidden}}
+#intro svg{filter:drop-shadow(0 0 14px rgba(212,174,85,.45))}
+#intro .sh{stroke-dasharray:1;stroke-dashoffset:1}
+#intro.go .sh{animation:dr .6s ease forwards}
+#intro .sc{opacity:0;transform-origin:20px 7px}
+#intro.go .sc{animation:fi .35s .45s ease forwards,sw .7s .45s ease}
+#intro .rs{opacity:0}#intro.go .rs{animation:fi .35s .65s ease forwards}
+#intro .il{color:#d4ae55;font:600 20px "Newsreader",Georgia,serif;letter-spacing:.22em;opacity:0}#intro.go .il{animation:fi .4s .6s ease forwards}
+@keyframes dr{to{stroke-dashoffset:0}}@keyframes fi{to{opacity:1}}@keyframes sw{0%{transform:rotate(-14deg)}40%{transform:rotate(9deg)}70%{transform:rotate(-4deg)}100%{transform:rotate(0)}}
+@media(prefers-reduced-motion:reduce){#intro{display:none}}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:no-preference){.view.on .card,.view.on .ph div,.view.on .jr figure,.view.on .note,.view.on .hcard{animation:up .55s ease both}.view.on .grid>*:nth-child(2),.view.on .ph>*:nth-child(2){animation-delay:.07s}.view.on .grid>*:nth-child(3),.view.on .ph>*:nth-child(3){animation-delay:.14s}.view.on .grid>*:nth-child(4),.view.on .ph>*:nth-child(4){animation-delay:.21s}.view.on .grid>*:nth-child(n+5){animation-delay:.28s}}
+</style>
 </head>
 <body>
+<div id="intro" class="show go boot" aria-hidden="true"><svg viewBox="0 0 40 40" width="120" height="120"><defs><linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dc8f"/><stop offset="1" stop-color="#b8923a"/></linearGradient></defs><path class="sh" pathLength="1" d="M20 2l15 5v11c0 9-6 16-15 20C11 34 5 27 5 18V7z" fill="none" stroke="url(#lg2)" stroke-width="1.6"/><g class="sc" fill="none" stroke="url(#lg2)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v14M11 10h18M16 21h8"/><path d="M11 10l-3.5 6.5h7zM29 10l-3.5 6.5h7z"/></g><text class="rs" x="20" y="31.5" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" font-weight="700" fill="#fff" letter-spacing=".5">RSR</text></svg><div class="il">ROHIT SINGH RUDRA</div></div>
+
 <header class="bar"><div class="ticker" role="marquee" aria-label="Future Advocate Rohit Singh Rudra"><div class="tk"><span>⚖️ Future Advocate Rohit Singh Rudra</span><i>✦</i><span>1st Generation Law Student</span><i>✦</i><span>Cyber Law · Corporate Law · GST &amp; Tax</span><i>✦</i><span>🙏 Jai Shree Shyam</span><i>✦</i><span>⚖️ Future Advocate Rohit Singh Rudra</span><i>✦</i><span>1st Generation Law Student</span><i>✦</i><span>Cyber Law · Corporate Law · GST &amp; Tax</span><i>✦</i><span>🙏 Jai Shree Shyam</span><i>✦</i></div></div><div class="wrap">
 <a class="brand" href="#home" aria-label="Rohit Singh Rudra home">
 <svg width="42" height="42" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dc8f"/><stop offset="1" stop-color="#b8923a"/></linearGradient></defs><path d="M20 2l15 5v11c0 9-6 16-15 20C11 34 5 27 5 18V7z" fill="#0b1f3a" stroke="url(#lg)" stroke-width="2"/><g fill="none" stroke="url(#lg)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v14M11 10h18M16 21h8"/><path d="M11 10l-3.5 6.5h7zM29 10l-3.5 6.5h7z"/></g><text x="20" y="31.5" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" font-weight="700" fill="#fff" letter-spacing=".5">RSR</text></svg>
@@ -200,6 +217,22 @@ h2{font-size:clamp(28px,5vw,40px)}
 <p class="sub">Primary sources first. Websites change, so confirm you are on the official domain.</p>
 <div class="grid res" id="res"></div></section></div></div>
 
+<div class="view" id="consult"><div class="wrap"><section class="s"><h2>Consultant Desk</h2>
+<p class="sub">Ask, learn and collaborate. Your message comes straight to Rohit’s email.</p>
+<div class="note"><b>Please read first:</b> Rohit is a law student, not an enrolled advocate, CA or CS. He cannot give legal, tax or investment advice or take cases. Use this form for study and career guidance, collaboration, article ideas, web or tech queries and networking. For a legal matter, consult a qualified advocate. <b>Do not send</b> passwords, Aadhaar, PAN, bank details, case files or other confidential documents.</div>
+<form id="cf" novalidate>
+<div><label for="cn">Your name</label><input id="cn" name="name" maxlength="60" autocomplete="name" required></div>
+<div><label for="ce">Your email</label><input id="ce" name="email" type="email" maxlength="80" autocomplete="email" required></div>
+<div><label for="ct">Topic</label><select id="ct" name="topic"><option>Study or career guidance</option><option>Collaboration or networking</option><option>Cyber awareness question</option><option>GST, tax or ITR learning question</option><option>Stock market awareness (no advice)</option><option>Website or web development</option><option>Article suggestion</option><option>Other</option></select></div>
+<div><label for="cm">Your message (20 to 1000 characters)</label><textarea id="cm" name="message" rows="5" maxlength="1000" required></textarea></div>
+<input type="text" id="ch" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+<div class="cap"><label for="cc">Type the code you see</label><div class="caprow"><canvas id="cv" width="170" height="54" role="img" aria-label="Captcha code image"></canvas><button type="button" id="cr" class="btn alt" aria-label="New code">↻ New code</button></div><input id="cc" maxlength="5" autocomplete="off" autocapitalize="characters" required></div>
+<label class="chk"><input type="checkbox" id="ck" required> I agree that my name, email and message are sent to Rohit through FormSubmit so he can reply.</label>
+<button class="btn" type="submit" id="cs">Send message</button>
+<p id="cst" class="sub" role="status" aria-live="polite" style="margin:0"></p>
+</form>
+<p class="sub" style="margin-top:14px">The code helps stop basic spam bots. Messages are sent by a free third-party form service, so delivery depends on that service. You can always email directly at <a href="mailto:mrrohitsingh420@gmail.com">mrrohitsingh420@gmail.com</a>.</p>
+</section></div></div>
 <div class="view" id="contact"><div class="wrap"><section class="s"><h2>Contact and collaboration</h2>
 <div class="note">Do not send case files, passwords, Aadhaar, PAN, bank details or other sensitive documents here. Sending a message does not create an advocate-client relationship, and I cannot give legal advice.</div>
 <form id="f"><div><label for="n">Name</label><input id="n" required></div>
@@ -246,12 +279,12 @@ h2{font-size:clamp(28px,5vw,40px)}
 </main>
 
 <footer><div class="wrap"><p>The information on this website is provided for general educational and informational purposes only. It is not a substitute for advice from a qualified professional who has reviewed the specific facts of your matter. Laws and procedures may change. Please verify applicable laws and official notifications before acting on any information.</p>
-<p>Privacy: this site has no accounts and stores no form data. The contact form uses your own email app, so only what you choose to send reaches me, and you can ask me to delete it. Optional analytics are off.</p></div></footer>
+<p>Privacy: this site has no accounts and stores no form data itself. The Contact page opens your own email app. The Consultant Desk form sends your name, email, topic and message through FormSubmit, a free third-party form service, to Rohit’s email. Send only what is needed, and you can ask Rohit to delete your message. Optional analytics are off.</p></div></footer>
 
 <script>
 /* EDIT HERE: your real details */
 const CFG={email:"mrrohitsingh420@gmail.com",telegram:"",instagram:"https://www.instagram.com/youngadvocatesindia",linkedin:""}; /* paste full URLs, e.g. https://t.me/yourgroup */
-const pages=[["home","Home"],["about","About"],["roadmap","Roadmap"],["cyber","Cyber Law"],["corporate","Corporate"],["tax","GST & Tax"],["library","Library"],["network","Network"],["resources","Resources"],["contact","Contact"]];
+const pages=[["home","Home"],["about","About"],["roadmap","Roadmap"],["cyber","Cyber Law"],["corporate","Corporate"],["tax","GST & Tax"],["library","Library"],["network","Network"],["resources","Resources"],["consult","Consultant"],["contact","Contact"]];
 const topics={cyber:["Introduction to Indian cyber law","Information Technology Act, 2000","Digital Personal Data Protection law and rules","Cybercrime and online financial fraud awareness","Digital evidence and electronic records","OSINT and digital forensics basics (lawful use only)","Privacy and cybersecurity awareness"],
 corporate:["Companies Act, 2013","LLP Act, 2008","Contract law and business agreements","Company incorporation basics","Corporate compliance and governance","Legal due diligence","Startup legal awareness and IP basics","Legal research and drafting"],
 tax:["GST basics and registration concepts","GST returns and Input Tax Credit concepts","Income tax basics and ITR awareness","TDS and advance tax concepts","Tax documentation checklists","Common tax mistakes"]};
@@ -296,15 +329,43 @@ addEventListener("hashchange",route);route();
 <script>
 (function(){
 const Q=s=>document.querySelector(s);
-const ICON={roadmap:"🧭",cyber:"🛡️",corporate:"🏢",tax:"🧾",library:"📚",network:"🤝",resources:"🔗",contact:"✉️"};
-const DESC={roadmap:"Why law is bigger than courts, and my roadmap",cyber:"Cyber law and cybercrime awareness",corporate:"Companies, contracts and compliance",tax:"GST, income tax and ITR basics",library:"20 beginner articles with sources",network:"Learn together with students and professionals",resources:"Official government links",contact:"Email and Instagram"};
-Q("#quick").innerHTML=pages.slice(2,10).map(p=>`<a class="card qk" href="#${p[0]}"><div class="ic">${ICON[p[0]]||"•"}</div><h3>${p[1]}</h3><p>${DESC[p[0]]||""}</p></a>`).join("");
+const ICON={roadmap:"🧭",cyber:"🛡️",corporate:"🏢",tax:"🧾",library:"📚",network:"🤝",resources:"🔗",consult:"🎯",contact:"✉️"};
+const DESC={roadmap:"Why law is bigger than courts, and my roadmap",cyber:"Cyber law and cybercrime awareness",corporate:"Companies, contracts and compliance",tax:"GST, income tax and ITR basics",library:"20 beginner articles with sources",network:"Learn together with students and professionals",resources:"Official government links",consult:"Ask a study doubt or propose a collaboration",contact:"Email and Instagram"};
+Q("#quick").innerHTML=pages.slice(2,11).map(p=>`<a class="card qk" href="#${p[0]}"><div class="ic">${ICON[p[0]]||"•"}</div><h3>${p[1]}</h3><p>${DESC[p[0]]||""}</p></a>`).join("");
 Q("#feat").innerHTML=[1,6,8].map(i=>`<a class="card qk" href="#article-${i}"><h3>${W[i].t}</h3><p>${W[i].s}</p></a>`).join("");
 const fab=Q("#bot-fab"),bot=Q("#bot"),bm=Q("#bm"),bi=Q("#bi");
 const MAIL="mrrohitsingh420@gmail.com",IG="https://www.instagram.com/youngadvocatesindia";
 const L=i=>`<a href="#article-${i}">${W[i].t}</a>`;
 /* Each entry: k = keywords (English, Hinglish, Hindi), then answers en / hl (Hinglish) / hi (Hindi) */
 const I=[
+{k:["consultant","consultation","enquiry","inquiry","form","captcha","appointment","कंसल्टेंट","फॉर्म","सलाहकार"],
+en:`Use the <a href="#consult">Consultant Desk</a>: fill in your name, email, topic and message, solve the captcha and send. The message reaches Rohit by email. It is for study guidance, collaboration and article requests. Rohit cannot give legal, tax or investment advice.`,
+hl:`<a href="#consult">Consultant Desk</a> kholein: naam, email, topic aur message bharein, captcha solve karein aur send karein. Message seedha Rohit ke email par jaata hai. Ye study guidance, collaboration aur article request ke liye hai. Rohit legal, tax ya investment advice nahi dete.`,
+hi:`<a href="#consult">कंसल्टेंट पेज</a> खोलें: नाम, ईमेल, विषय और संदेश भरें, कैप्चा हल करें और भेजें। संदेश सीधे रोहित के ईमेल पर पहुँचता है। यह पढ़ाई में मार्गदर्शन, सहयोग और लेख के अनुरोध के लिए है। रोहित कानूनी, टैक्स या निवेश सलाह नहीं देते।`},
+{k:["dhara","section","sections","धारा","धाराएँ","धाराओं"],
+en:"A section (dhara) is a numbered provision of an Act. Ask me with a number, for example “Section 66C IT Act” or “dhara 16 GST”. I know: IT Act 43, 66, 66A, 66C, 66D, 67, 79; CGST Act 16, 17, 22, 24; Contract Act 10, 27; Bharatiya Sakshya Adhiniyam 63.",
+hl:"Section (dhara) kisi Act ki numbered provision hoti hai. Number ke saath poochhein, jaise “Section 66C IT Act” ya “dhara 16 GST”. Mujhe ye pata hain: IT Act 43, 66, 66A, 66C, 66D, 67, 79; CGST Act 16, 17, 22, 24; Contract Act 10, 27; Bharatiya Sakshya Adhiniyam 63.",
+hi:"धारा (section) किसी अधिनियम का क्रमांकित प्रावधान होती है। नंबर के साथ पूछें, जैसे “धारा 66C IT Act” या “धारा 16 GST”। मुझे ये धाराएँ पता हैं: IT Act 43, 66, 66A, 66C, 66D, 67, 79; CGST Act 16, 17, 22, 24; Contract Act 10, 27; भारतीय साक्ष्य अधिनियम 63।"},
+{k:["website","site","pages","menu","navigate","features","kya kya","what is on","वेबसाइट","साइट","पेज","मेन्यू"],
+en:`This website has: ${pages.map(p=>`<a href="#${p[0]}">${p[1]}</a>`).join(" · ")}. The Library has 20 beginner articles with sources, Roadmap explains the scope of law, and Consultant has the contact form.`,
+hl:`Is website me ye pages hain: ${pages.map(p=>`<a href="#${p[0]}">${p[1]}</a>`).join(" · ")}. Library me sources ke saath 20 beginner articles hain, Roadmap me law ka scope hai, aur Consultant me contact form hai.`,
+hi:`इस वेबसाइट में ये पेज हैं: ${pages.map(p=>`<a href="#${p[0]}">${p[1]}</a>`).join(" · ")}। लाइब्रेरी में स्रोतों सहित 20 शुरुआती लेख हैं, रोडमैप में कानून का दायरा है, और कंसल्टेंट में संपर्क फॉर्म है।`},
+{k:["official","portal","government","india code","ecourts","mca","cbic","cert-in","sarkari","आधिकारिक","सरकारी","पोर्टल"],
+en:`Official sources:<br>${R.map(r=>`• <a href="${r[1]}" target="_blank" rel="noopener">${r[0]}</a>: ${r[2]}`).join("<br>")}`,
+hl:`Official sources:<br>${R.map(r=>`• <a href="${r[1]}" target="_blank" rel="noopener">${r[0]}</a>: ${r[2]}`).join("<br>")}`,
+hi:`आधिकारिक स्रोत (अंग्रेज़ी में विवरण):<br>${R.map(r=>`• <a href="${r[1]}" target="_blank" rel="noopener">${r[0]}</a>: ${r[2]}`).join("<br>")}`},
+{k:["privacy","data","stored","secure","cookies","tracking","analytics","गोपनीयता","डेटा","सुरक्षित"],
+en:"This site has no accounts, ads or analytics, and this chat runs in your browser and is not stored. The Consultant form sends your message to Rohit by email through a free form service. Please never share passwords, Aadhaar, PAN or bank details.",
+hl:"Is site par koi account, ads ya analytics nahi hai, aur ye chat aapke browser me chalti hai, store nahi hoti. Consultant form aapka message ek free form service ke through Rohit ko email karta hai. Kripya password, Aadhaar, PAN ya bank details kabhi share na karein.",
+hi:"इस साइट पर कोई अकाउंट, विज्ञापन या एनालिटिक्स नहीं है, और यह चैट आपके ब्राउज़र में चलती है, सेव नहीं होती। कंसल्टेंट फॉर्म आपका संदेश एक मुफ्त फॉर्म सेवा से रोहित को ईमेल करता है। कृपया पासवर्ड, आधार, पैन या बैंक विवरण कभी साझा न करें।"},
+{k:["disclaimer","educational","reliable","accurate","verify","trust","भरोसा","विश्वसनीय"],
+en:"The articles are general educational notes by a law student and are marked Draft until verified. Laws, rates and dates change, so always verify on the official source links. Nothing here is legal, tax or investment advice.",
+hl:"Articles ek law student ke general educational notes hain aur verify hone tak Draft marked hain. Law, rates aur dates badalte rehte hain, isliye official source links par verify zaroor karein. Yahan kuch bhi legal, tax ya investment advice nahi hai.",
+hi:"ये लेख एक लॉ स्टूडेंट के सामान्य शैक्षिक नोट्स हैं और सत्यापित होने तक ड्राफ्ट चिह्नित हैं। कानून, दरें और तारीखें बदलती रहती हैं, इसलिए आधिकारिक स्रोतों पर ज़रूर जाँचें। यहाँ कुछ भी कानूनी, टैक्स या निवेश सलाह नहीं है।"},
+{k:["law is","scope of law","court kachehri","bigger","contribution","gandhi","ambedkar","kesavananda","landmark","judgment","judgement","palkhivala","कचहरी","योगदान","संविधान"],
+en:`Law is much bigger than court-kachehri: constitutional, corporate, cyber, tax, finance, IP, environment, human rights, arbitration, judiciary and legal tech. Leaders like Gandhi, Nehru, Patel and Rajendra Prasad were lawyers, and Dr. Ambedkar chaired the Constitution Drafting Committee. Landmark cases include Kesavananda Bharati (1973), Maneka Gandhi (1978), Shreya Singhal (2015) and Puttaswamy (2017). See the <a href="#roadmap">Roadmap page</a>.`,
+hl:`Law court-kachehri se bahut bada hai: constitutional, corporate, cyber, tax, finance, IP, environment, human rights, arbitration, judiciary aur legal tech. Gandhi, Nehru, Patel aur Rajendra Prasad jaise neta lawyer the, aur Dr. Ambedkar ne Constitution Drafting Committee ki adhyakshta ki. Landmark cases: Kesavananda Bharati (1973), Maneka Gandhi (1978), Shreya Singhal (2015), Puttaswamy (2017). <a href="#roadmap">Roadmap page</a> dekhein.`,
+hi:`कानून कोर्ट-कचहरी से बहुत बड़ा है: संवैधानिक, कॉर्पोरेट, साइबर, टैक्स, फाइनेंस, IP, पर्यावरण, मानवाधिकार, मध्यस्थता, न्यायपालिका और लीगल टेक। गांधी, नेहरू, पटेल और राजेंद्र प्रसाद जैसे नेता वकील थे, और डॉ. अंबेडकर संविधान की प्रारूप समिति के अध्यक्ष थे। प्रमुख मामले: केशवानंद भारती (1973), मेनका गांधी (1978), श्रेया सिंघल (2015), पुट्टास्वामी (2017)। <a href="#roadmap">रोडमैप पेज</a> देखें।`},
 {k:["advocate","lawyer","vakil","wakeel","enrol","bar council","practice","practising","वकील","एडवोकेट","वकालत","बार काउंसिल","एनरोल"],
 en:"Rohit is a first-generation law student and a future advocate. He is not an enrolled advocate yet. After completing LL.B., he plans to enrol with a State Bar Council and clear the All India Bar Examination, as required.",
 hl:"Rohit first-generation law student hain aur future advocate hain. Abhi wo enrolled advocate nahi hain. LL.B. complete karne ke baad wo State Bar Council me enrolment aur All India Bar Examination ki process poori karne ka plan rakhte hain.",
@@ -374,16 +435,49 @@ en:"Jai Shree Shyam! 🙏 Ask me anything about Rohit Singh Rudra: his backgroun
 hl:"Jai Shree Shyam! 🙏 Rohit Singh Rudra ke baare me kuch bhi poochhein: unka background, padhai, certificates, stock market experience, goals ya contact.",
 hi:"जय श्री श्याम! 🙏 रोहित सिंह रुद्र के बारे में कुछ भी पूछिए: उनकी पृष्ठभूमि, पढ़ाई, सर्टिफिकेट, स्टॉक मार्केट अनुभव, लक्ष्य या संपर्क।"}
 ];
+const AL=W.map(w=>`• ${L(w.id)}`).join("<br>");const ae=I.find(x=>x.k.includes("blog"));["en","hl","hi"].forEach(l=>ae[l]+="<br>"+AL);
 const FB={en:"I don’t have that information. You can ask Rohit by email or Instagram. I can tell you about his education, certificates, stock market experience, goals and contact details.",hl:"Mere paas iski jaankari nahi hai. Aap Rohit se email ya Instagram par pooch sakte hain. Main unki padhai, certificates, stock market experience, goals aur contact ke baare me bata sakta hoon.",hi:"मेरे पास इसकी जानकारी नहीं है। आप रोहित से ईमेल या इंस्टाग्राम पर पूछ सकते हैं। मैं उनकी पढ़ाई, सर्टिफिकेट, स्टॉक मार्केट अनुभव, लक्ष्य और संपर्क के बारे में बता सकता हूँ।"};
 const OK={auto:{en:"Auto mode: I will reply in the language you write in.",hl:"Auto mode: aap jis bhasha me likhenge, usi me jawab dunga.",hi:"ऑटो मोड: आप जिस भाषा में लिखेंगे, मैं उसी में उत्तर दूँगा।"},en:{en:"Okay, I will reply in English."},hl:{hl:"Theek hai, ab Hinglish me jawab dunga."},hi:{hi:"ठीक है, अब मैं हिंदी में उत्तर दूँगा।"}};
-const CH={en:["Who is Rohit?","Where is he from?","Education","Certificates","Stock market experience","Is he an advocate?","Goals","Contact"],hl:["Rohit kaun hai?","Kahan se hai?","Padhai","Certificates","Stock market experience","Kya wo advocate hai?","Goals","Contact"],hi:["रोहित कौन हैं?","कहाँ से हैं?","पढ़ाई","सर्टिफिकेट","स्टॉक मार्केट अनुभव","क्या वे एडवोकेट हैं?","लक्ष्य","संपर्क"]};
+const CH={en:["Who is Rohit?","Where is he from?","Education","Certificates","Stock market experience","Is he an advocate?","Consultant form","Section 66C?","Goals"],hl:["Rohit kaun hai?","Kahan se hai?","Padhai","Certificates","Stock market experience","Kya wo advocate hai?","Consultant form","Section 66C kya hai?","Goals"],hi:["रोहित कौन हैं?","कहाँ से हैं?","पढ़ाई","सर्टिफिकेट","स्टॉक मार्केट अनुभव","क्या वे एडवोकेट हैं?","कंसल्टेंट फॉर्म","धारा 66C क्या है?","लक्ष्य"]};
 const HLW=/\b(kya|kaun|kon|kahan|kaha|hai|hain|batao|bataiye|bata|kitna|kitne|kaise|kyun|kyu|nahi|nhi|mujhe|aap|tum|padhai|karta|karte|raha|rahe|wo|ye|yeh|isne|unka|unki|uska|uski|sawal|jankari|jaankari|hain|se|ka|ki|ke)\b/;
 let mode="auto",cur="en";
 function detect(q){if(/[\u0900-\u097F]/.test(q))return"hi";const t=q.toLowerCase();return HLW.test(t)&&!/^[a-z\s?]*\b(who|what|where|is he|does he|how)\b/.test(t)?"hl":"en"}
-function answer(q,lang){const t=q.toLowerCase(),tok=new Set(t.split(/[^\p{L}\p{M}\p{N}]+/u).filter(Boolean));let best=null,bs=0;
-for(const it of I){let s=0;for(const k of it.k){const hit=(k.length>3||k.includes(" "))?t.includes(k):tok.has(k);if(hit)s+=k.length>4?2:1}if(s>bs){bs=s;best=it}}
+const SEC=[
+{n:"43",act:"IT Act, 2000",a:0,en:"If someone accesses a computer or system without permission, copies data or damages it, the owner can claim compensation.",hl:"Bina permission kisi computer ya system ko access karna, data copy karna ya nuksan pahunchana ho to owner compensation maang sakta hai.",hi:"बिना अनुमति किसी कंप्यूटर या सिस्टम तक पहुँचना, डेटा कॉपी करना या नुकसान पहुँचाना हो तो मालिक मुआवज़ा मांग सकता है।"},
+{n:"66",act:"IT Act, 2000",a:0,en:"The acts listed in Section 43 become an offence when they are done dishonestly or fraudulently.",hl:"Section 43 me bataye gaye kaam agar beimani ya dhokhe se kiye jayein to ye offence ban jaate hain.",hi:"धारा 43 में बताए गए कार्य यदि बेईमानी या धोखे से किए जाएँ तो अपराध बन जाते हैं।"},
+{n:"66a",act:"IT Act, 2000",a:0,en:"It punished sending offensive messages online. The Supreme Court struck it down in Shreya Singhal v. Union of India (2015), so it cannot be used.",hl:"Ye online offensive messages bhejne par saza deti thi. Supreme Court ne ise Shreya Singhal v. Union of India (2015) me radd kar diya, isliye ye use nahi ho sakti.",hi:"यह ऑनलाइन आपत्तिजनक संदेश भेजने पर सज़ा देती थी। सुप्रीम कोर्ट ने इसे श्रेया सिंघल बनाम भारत संघ (2015) में रद्द कर दिया, इसलिए इसका उपयोग नहीं हो सकता।"},
+{n:"66c",act:"IT Act, 2000",a:0,en:"Identity theft: fraudulently using another person’s password, digital signature or other unique identification feature.",hl:"Identity theft: kisi dusre ka password, digital signature ya unique identification feature dhokhe se use karna.",hi:"पहचान की चोरी: किसी दूसरे का पासवर्ड, डिजिटल हस्ताक्षर या अन्य विशिष्ट पहचान धोखे से इस्तेमाल करना।"},
+{n:"66d",act:"IT Act, 2000",a:0,en:"Cheating by personation using a computer resource, for example pretending to be a bank officer online to take money.",hl:"Computer ke zariye dusre ka roop dharan karke dhokha dena, jaise online bank officer banke paise lena.",hi:"कंप्यूटर के माध्यम से किसी और का रूप धरकर धोखा देना, जैसे ऑनलाइन बैंक अधिकारी बनकर पैसे लेना।"},
+{n:"67",act:"IT Act, 2000",a:0,en:"Publishing or transmitting obscene material in electronic form is an offence.",hl:"Obscene material ko electronic form me publish ya transmit karna offence hai.",hi:"अश्लील सामग्री को इलेक्ट्रॉनिक रूप में प्रकाशित या प्रसारित करना अपराध है।"},
+{n:"79",act:"IT Act, 2000",a:0,en:"Gives online intermediaries protection from liability for third-party content if they follow the conditions in the law and rules.",hl:"Online intermediaries ko third-party content ke liye liability se suraksha deti hai, agar wo law aur rules ki shartein follow karein.",hi:"ऑनलाइन मध्यस्थों को तीसरे पक्ष की सामग्री के लिए दायित्व से सुरक्षा देती है, यदि वे कानून और नियमों की शर्तों का पालन करें।"},
+{n:"16",act:"CGST Act, 2017",a:7,en:"Conditions to claim Input Tax Credit: a valid invoice, receipt of goods or services, tax paid by the supplier and a return filed. Time limits apply, so check current rules.",hl:"Input Tax Credit ki shartein: valid invoice, goods ya services ki receipt, supplier ne tax bhara ho aur return file ho. Time limits lagti hain, isliye current rules check karein.",hi:"इनपुट टैक्स क्रेडिट की शर्तें: वैध चालान, माल या सेवा की प्राप्ति, आपूर्तिकर्ता द्वारा कर जमा और रिटर्न दाखिल। समय सीमा लागू होती है, इसलिए वर्तमान नियम जाँचें।"},
+{n:"17",act:"CGST Act, 2017",a:7,en:"Restricts credit in some cases: apportionment for exempt or non-business use, and the list of blocked credits.",hl:"Kuch cases me credit par rok lagati hai: exempt ya non-business use ka apportionment, aur blocked credits ki list.",hi:"कुछ मामलों में क्रेडिट पर रोक लगाती है: छूट प्राप्त या गैर-व्यावसायिक उपयोग का विभाजन, और अवरुद्ध क्रेडिट की सूची।"},
+{n:"22",act:"CGST Act, 2017",a:6,en:"A supplier whose turnover goes above the prescribed limit must register. The limit changes, so check the GST portal.",hl:"Jiska turnover tay limit se upar jaye use register karna padta hai. Limit badalti rehti hai, isliye GST portal dekhein.",hi:"जिसका टर्नओवर निर्धारित सीमा से ऊपर जाए उसे पंजीकरण कराना पड़ता है। सीमा बदलती रहती है, इसलिए GST पोर्टल देखें।"},
+{n:"24",act:"CGST Act, 2017",a:6,en:"Lists cases where registration is compulsory whatever the turnover, such as some inter-state supplies and e-commerce operators. Check the current list.",hl:"Aise cases ki list jahan turnover chahe jitna ho registration zaroori hai, jaise kuch inter-state supplies aur e-commerce operators. Current list check karein.",hi:"ऐसे मामलों की सूची जहाँ टर्नओवर कुछ भी हो पंजीकरण अनिवार्य है, जैसे कुछ अंतरराज्यीय आपूर्तियाँ और ई-कॉमर्स ऑपरेटर। वर्तमान सूची जाँचें।"},
+{n:"10",act:"Indian Contract Act, 1872",a:5,en:"An agreement becomes a contract when there is free consent of competent parties, a lawful consideration and object, and it is not expressly declared void.",hl:"Agreement tab contract banta hai jab competent parties ki free consent ho, lawful consideration aur object ho, aur wo expressly void declare na ho.",hi:"समझौता तब अनुबंध बनता है जब सक्षम पक्षों की स्वतंत्र सहमति हो, वैध प्रतिफल और उद्देश्य हो, और वह स्पष्ट रूप से शून्य घोषित न हो।"},
+{n:"27",act:"Indian Contract Act, 1872",a:12,en:"Agreements in restraint of trade are generally void, so a long non-compete after leaving a job may not be enforceable. For a specific clause, ask a qualified advocate.",hl:"Vyapar par rok lagane wale agreements aam taur par void hote hain, isliye naukri chhodne ke baad lamba non-compete enforceable na bhi ho sakta hai. Kisi clause ke liye qualified advocate se poochhein.",hi:"व्यापार पर रोक लगाने वाले समझौते सामान्यतः शून्य होते हैं, इसलिए नौकरी छोड़ने के बाद लंबा नॉन-कम्पीट लागू न भी हो सकता है। किसी खास धारा के लिए योग्य एडवोकेट से पूछें।"},
+{n:"63",act:"Bharatiya Sakshya Adhiniyam, 2023",a:2,en:"Deals with admissibility of electronic records and the certificate requirement. It corresponds to Section 65B of the older Indian Evidence Act, 1872. Confirm the current text on India Code.",hl:"Electronic records ki admissibility aur certificate ki requirement se judi hai. Ye purane Indian Evidence Act, 1872 ki Section 65B ke samaan hai. India Code par current text confirm karein.",hi:"इलेक्ट्रॉनिक अभिलेखों की स्वीकार्यता और प्रमाणपत्र की आवश्यकता से संबंधित है। यह पुराने भारतीय साक्ष्य अधिनियम, 1872 की धारा 65B के समान है। India Code पर वर्तमान पाठ की पुष्टि करें।"}
+];
+function secLookup(q,lang){const t=q.toLowerCase(),hw=/(section|\bsec\b|dhara|धारा|u\/s)/.test(t),aw=/\b(it act|gst|cgst|contract|evidence|sakshya|cyber|itc)\b/.test(t);
+for(const x of t.matchAll(/\b(\d{1,3})([a-d])?\b/g)){const key=x[1]+(x[2]||"");const g=SEC.find(s=>s.n===key);
+if(g&&(hw||x[2]||aw))return `<b>${g.act} · ${lang==="hi"?"धारा":"Section"} ${g.n.toUpperCase()}</b><br>${g[lang]}<br>${lang==="hi"?"संबंधित लेख":"Related article"}: ${L(g.a)}`}
+return null}
+const STOP=new Set("what is the how to for and of in a an me ko ka ki ke se ye wo kya hai hain kaise kaun about rohit he his does do can you tell please bataiye batao mujhe explain meaning means define are was with".split(" "));
+const ALIAS={itc:"input tax credit",dpdp:"digital personal data protection",pvt:"private limited",gstr:"gst return"};
+const HIW={"जीएसटी":"gst","रजिस्ट्रेशन":"registration","पंजीकरण":"registration","आईटीआर":"itr","कंपनी":"company","अनुबंध":"contract","कॉन्ट्रैक्ट":"contract","सबूत":"evidence","साक्ष्य":"evidence","धोखाधड़ी":"fraud","टीडीएस":"tds","रिटर्न":"return","शिकायत":"report","रिपोर्ट":"report","क्रेडिट":"credit","जजमेंट":"judgment","निदेशक":"director","पार्टनर":"partner"};
+function artFind(q){let t=q.toLowerCase();for(const k in HIW)t=t.split(k).join(" "+HIW[k]+" ");for(const k in ALIAS)t=t.replace(new RegExp("\\b"+k+"\\b","g"),ALIAS[k]);
+const ws=[...new Set(t.split(/[^\p{L}\p{N}]+/u).filter(w=>w.length>2&&!STOP.has(w)))];let ba=-1,sc=0;
+W.forEach((w,i)=>{const ti=w.t.toLowerCase(),su=(w.s+" "+w.c).toLowerCase(),bo=w.b.join(" ").toLowerCase();let s=0;ws.forEach(x=>{if(ti.includes(x))s+=3;else if(su.includes(x))s+=2;else if(bo.includes(x))s+=1});if(s>sc){sc=s;ba=i}});return[ba,sc]}
+function artReply(i,lang){const w=W[i];let p=(w.b[1]||"").replace(/^- /,"");if(p.length>240)p=p.slice(0,237)+"…";
+const pre={en:"This article covers it: ",hl:"Ye article is topic par madad karega: ",hi:"यह लेख इस विषय में मदद करेगा (लेख अंग्रेज़ी में है): "}[lang];
+return `${pre}${L(i)}<br>${w.s}<br>${p}`}
+function answer(q,lang){const s=secLookup(q,lang);if(s)return s;
+const t=q.toLowerCase(),tok=new Set(t.split(/[^\p{L}\p{M}\p{N}]+/u).filter(Boolean));let best=null,bs=0;
+for(const it of I){let s2=0;for(const k of it.k){const hit=(k.length>3||k.includes(" "))?t.includes(k):tok.has(k);if(hit)s2+=k.length>4?2:1}if(s2>bs){bs=s2;best=it}}
+const [ba,sc]=artFind(q);
+if(ba>=0&&sc>=5&&bs<5)return artReply(ba,lang);
 if(best)return best[lang];
-if(lang!=="hi"){const ws=[...tok].filter(w=>w.length>3);let ba=-1,sc=0;W.forEach((w,i)=>{const h=(w.t+" "+w.c+" "+w.s).toLowerCase();let s=0;ws.forEach(x=>{if(h.includes(x))s++});if(s>sc){sc=s;ba=i}});if(ba>=0)return (lang==="hl"?"Is topic par ye article madad kar sakta hai: ":"This article may help: ")+L(ba)}
+if(ba>=0&&sc>=2)return artReply(ba,lang);
 return FB[lang]}
 function add(c,v,txt){const d=document.createElement("div");d.className="m "+c;txt?d.textContent=v:d.innerHTML=v;bm.appendChild(d);bm.scrollTop=bm.scrollHeight}
 function chips(){Q("#bc").innerHTML=CH[cur].map(c=>`<button type="button">${c}</button>`).join("")}
@@ -392,10 +486,50 @@ chips();
 Q("#bc").onclick=e=>{if(e.target.tagName==="BUTTON")ask(e.target.textContent,true)};
 Q("#bf").onsubmit=e=>{e.preventDefault();ask(bi.value);bi.value=""};
 Q("#bl").onclick=e=>{const b=e.target.closest("button");if(!b)return;mode=b.dataset.l;if(mode!=="auto")cur=mode;document.querySelectorAll("#bl button").forEach(x=>x.classList.toggle("on",x===b));chips();add("b",mode==="auto"?OK.auto[cur]:OK[mode][mode])};
-add("b","Jai Shree Shyam 🙏 I’m an automated FAQ assistant. Ask me about Rohit’s education, certificates, stock market experience, goals or contact details. English, Hinglish and हिंदी all work.");
+add("b","Jai Shree Shyam 🙏 I’m an automated FAQ assistant. Ask about Rohit, any article or section (dhara) on this site, the Consultant form, or tap a question below. English, Hinglish and हिंदी all work.");
 function tog(o){bot.hidden=!o;fab.setAttribute("aria-expanded",o);if(o)bi.focus()}
 fab.onclick=()=>tog(bot.hidden);Q("#bx").onclick=()=>{tog(false);fab.focus()};
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!bot.hidden)tog(false)});
+})();
+</script>
+<script>
+(function(){
+const Q=s=>document.querySelector(s),EP="https://formsubmit.co/ajax/mrrohitsingh420@gmail.com",MAIL="mrrohitsingh420@gmail.com";
+const AL="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";let code="",busy=false;
+function rnd(n){const a=new Uint32Array(1);crypto.getRandomValues(a);return a[0]%n}
+function draw(){const c=Q("#cv"),x=c.getContext("2d");code=Array.from({length:5},()=>AL[rnd(AL.length)]).join("");
+x.fillStyle="#f3f4f7";x.fillRect(0,0,170,54);
+for(let i=0;i<7;i++){x.strokeStyle=`hsl(${rnd(360)},45%,60%)`;x.lineWidth=1+rnd(2);x.beginPath();x.moveTo(rnd(170),rnd(54));x.lineTo(rnd(170),rnd(54));x.stroke()}
+x.font="bold 30px Georgia,serif";x.textBaseline="middle";
+[...code].forEach((ch,i)=>{x.save();x.translate(14+i*30,28+rnd(8)-4);x.rotate((rnd(40)-20)*Math.PI/180);x.fillStyle=`hsl(${210+rnd(40)},60%,${22+rnd(12)}%)`;x.fillText(ch,0,0);x.restore()});
+for(let i=0;i<40;i++){x.fillStyle="rgba(11,31,58,.25)";x.fillRect(rnd(170),rnd(54),2,2)}}
+draw();Q("#cr").onclick=()=>{draw();Q("#cc").value=""};
+function say(m,ok){const s=Q("#cst");s.innerHTML=m;s.style.color=ok?"#1c7a4a":"#b3261e"}
+Q("#cf").onsubmit=async e=>{e.preventDefault();if(busy)return;
+const n=Q("#cn").value.trim(),em=Q("#ce").value.trim(),t=Q("#ct").value,m=Q("#cm").value.trim();
+if(Q("#ch").value)return;
+if(n.length<2)return say("Please enter your name.");
+if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em))return say("Please enter a valid email address.");
+if(m.length<20)return say("Please write at least 20 characters in your message.");
+if(!Q("#ck").checked)return say("Please tick the consent box.");
+if(Q("#cc").value.trim().toUpperCase()!==code){draw();Q("#cc").value="";return say("The code did not match. Please try the new code.")}
+busy=true;const b=Q("#cs");b.disabled=true;b.textContent="Sending…";say("Sending your message…",true);
+const ctl=new AbortController(),to=setTimeout(()=>ctl.abort(),15000);
+try{const r=await fetch(EP,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({name:n,email:em,topic:t,message:m,_subject:"Consultant Desk enquiry: "+t,_template:"table",_captcha:"false",_honey:""}),signal:ctl.signal});
+const d=await r.json().catch(()=>({}));
+if(r.ok&&(d.success===true||d.success==="true")){say("Thank you! Your message has been sent. Rohit will reply on your email.",true);Q("#cf").reset()}
+else throw new Error("fail")}
+catch(err){const body=encodeURIComponent(`Name: ${n}\nEmail: ${em}\nTopic: ${t}\n\n${m}`);say(`Sorry, the message could not be sent from here. Please <a href="mailto:${MAIL}?subject=${encodeURIComponent("Consultant Desk enquiry: "+t)}&body=${body}">email Rohit directly</a>.`)}
+finally{clearTimeout(to);busy=false;b.disabled=false;b.textContent="Send message";draw();Q("#cc").value=""}};
+})();
+</script>
+<script>
+/* Logo transition: plays for 1 second before a new page opens */
+(function(){const intro=document.getElementById("intro");if(!intro)return;const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;let busy=false;
+if(reduce){intro.remove();return}
+function play(cb){intro.classList.remove("boot","go","show");void intro.offsetWidth;intro.classList.add("show","go");setTimeout(()=>{cb();setTimeout(()=>{intro.classList.remove("show");setTimeout(()=>intro.classList.remove("go"),260)},120)},1000)}
+setTimeout(()=>{intro.classList.remove("show");setTimeout(()=>intro.classList.remove("go","boot"),260)},1150);
+document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]');if(!a||busy)return;const h=a.getAttribute("href");if(h.length<2||h===location.hash||a.target)return;e.preventDefault();busy=true;play(()=>{location.hash=h;busy=false})});
 })();
 </script>
 </body>
